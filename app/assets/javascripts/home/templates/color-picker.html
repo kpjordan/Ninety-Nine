@@ -1,0 +1,7 @@
+ <label>
+ Color (approximate):
+ </label>
+<br>
+ <span ng-repeat="colorOption in colorOptions track by colorOption.id">
+ <span class="colorspot" style="background-color: {{colorOption.hex}}" ng-model="nnColor" ng-class="{ 'active': isColor(colorOption.id) }" ng-click="setColor(colorOption.id)" title="{{colorOption.name}}"></span>
+ </span>

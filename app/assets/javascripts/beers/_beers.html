@@ -1,0 +1,39 @@
+<div class="container-fluid show-page">
+	
+	<div class="row">
+	   <beer-drink></beer-drink>
+	</div> 
+	
+	<div class="row">
+		<span>
+	   		<h1 class="beer-name">{{beer.name}}</h1> 
+	   		<button class="btn btn-default btn-show" ng-click="toggleDetails()" role="button">{{buttonText}}</button>
+	    	<beer-details ng-show="showDetails"></beer-details>
+	    </span>
+	</div>
+
+	<br>
+	<div class="row">
+	 	<div class="action-buttons">
+	 		<button class="btn btn-default btn-edit" ui-sref="edit({id:beer.id})">Edit</button>
+ 			<button class="btn btn-default btn-delete" data-toggle="modal" data-target="#myModal">Delete</button>
+
+ 			<!-- modal -->
+ 			<div id="myModal" class="modal fade" role="dialog">
+ 				<div class="modal-dialog">
+ 					<div class="modal-content">
+ 						<p>Are you sure you want to delete <strong>{{beer.name}}</strong>?</p>
+ 						<button class="btn btn-default btn-edit" data-dismiss="modal">Cancel</button>
+ 						<button class="btn btn-default btn-delete" data-dismiss="modal" ng-click="archiveBeer()">Delete</button>
+ 					</div>
+ 				</div>
+ 			</div>
+	 			<!-- end modal -->
+		</div>
+	</div>
+	<div class="row">
+		<div class="back-to-home">
+			<button class="btn btn-default btn-show" ui-sref="home">back to list</button>
+		</div>
+	</div>	 
+</div>

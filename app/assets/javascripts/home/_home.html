@@ -1,0 +1,12 @@
+<nn-messages messages="messages" errors="errors"></nn-messages>
+<div class="row">
+	<div class="page-title-main">
+		{{pageTitle}}
+		<button class="btn btn-default btn-show" ng-click="toggleData()">{{buttonText}}</button>
+	</div>
+</div>	
+<div class="row">
+	<div class="container-fluid container-grid">
+		<div ui-grid="gridOptions" class="nnGrid"></div>
+	</div>
+</div>

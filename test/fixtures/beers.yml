@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  brewed_on: MyString
+  quantity_small: 1
+  quantity_large: 1
+  category: MyString
+  id_marks: MyString
+  description: MyString
+  bottled: false
+
+two:
+  name: MyString
+  brewed_on: MyString
+  quantity_small: 1
+  quantity_large: 1
+  category: MyString
+  id_marks: MyString
+  description: MyString
+  bottled: false

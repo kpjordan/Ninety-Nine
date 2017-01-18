@@ -1,0 +1,18 @@
+<nn-messages messages="messages" errors="errors"></nn-messages>
+
+<div>
+	<h3>Restore Deleted Beers</h3>
+	<button class="btn btn-default btn-show" ng-click="toggleRestoreTable()">{{restoreButtonText}}</button>
+	<div ng-show="showDeleted">
+		<table class="my-table" >
+			<tr>
+				<th id="name">Name</th>
+				<th id="restore">Action</th>
+			</tr>
+			<tr ng-repeat="beer in archivedBeers track by $index">
+				<td>{{beer.name}}</td>
+				<td><button class="btn btn-default" ng-click="undoDelete(beer)">Undo Delete</button></td>
+			</tr>
+		</table>
+	</div>
+</div>

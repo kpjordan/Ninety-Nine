@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="row">
+    <h1 class="page-title">{{pageTitle}}</h1>
+      <form name="form" > 
+      
+        <label>
+          Name:
+        </label>
+        <input type="text"  ng-model="beer.name" title="name" required />
+        <br>
+        
+        
+        <label>
+          Bottle Date:
+        </label>
+    	  <input type="date"  title="bottle date" placeholder="{{showDate}} || '' " ng-model="showDate" required />
+        <br>
+        
+        
+        <label>
+          12 oz. Bottles:
+        </label>
+        <input type="number" title="Number of 12oz Bottles" name="sizeSmall" ng-model="beer.quantity_small" min="0" max="500" required />
+        <span ng-show="form.sizeSmall.$error.min || form.sizeSmall.$error.max">The number must be between 0 and 500!</span>
+        <br>
+        
+        
+        <label>
+          22 oz. Bottles:
+        </label>
+        <input type="number" title="Number of 22oz Bottles" name="sizeLarge" ng-model="beer.quantity_large" min="0" max="500" required />
+        <span ng-show="form.sizeLarge.$error.min || form.sizeLarge.$error.max">The number must be between 0 and 500!</span> 
+        <br>
+                
+        <category-picker nn-category="nnCategory" categories="categories"></category-picker>
+        <br>
+        
+        
+        <label>
+          Bottle Identification:
+        </label>
+    	  <input type="text" ng-model="beer.id_marks" title="How do you recognize it?" maxlength="30" required />
+      	<br>
+        
+        
+        <label>
+          Description:
+        </label>
+        <br>
+        <textarea rows="8" cols="40" title="A brief description" maxlength="255" ng-model="beer.description" required ></textarea>
+        <br>
+        
+        
+        <label>
+          ABV:
+        </label>
+        <input type="number" title="ABV percentage" name="abv" ng-model="beer.abv" step="0.01" min="0" max="20" required />%
+        <span ng-show="form.abv.$error.min || form.abv.$error.max">Must be between 0 and 20!</span>
+        <br>
+       
+
+        <color-picker colors="colorOptions" color="nnColor"></color-picker>
+        <br>
+        <br>
+
+        <button type="submit" ng-show="$state.includes('new')" ng-disabled="form.$invalid" class="btn btn-default btn-block" id="form-button" ng-click="createBeer()">Create</button>
+
+        <button type="submit" ng-show="$state.includes('edit')" ng-disabled="form.$invalid" class="btn btn-default btn-block" id="form-button" ng-click="updateBeer()">Update</button>
+        <br>
+        <br>
+        <button class="btn btn-default btn-show" ui-sref="home" >Back to list</button>
+      </form>
+      
+      
+
+  </div>
+</div>
+

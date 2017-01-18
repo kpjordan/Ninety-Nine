@@ -1,0 +1,16 @@
+<div class="container well-container">
+	<div class="row">
+	<div class="col-sm-4 col-sm-offset-4 ">
+		<div class="well details-well">
+			<ul>
+				<li>Bottled on: {{beer.bottle_date | date : 'longDate' }}</li>
+				<li>Category: {{myCategory.name}}</li>
+				<li>Identification: {{beer.id_marks}}</li>
+				<li>Description: {{beer.description}}</li>
+				<li>ABV: {{beer.abv}}%</li>
+				<li><span class="colorspot" style="background-color: {{getNnColor(beer.color_id)}};" ></span></li>
+			</ul>
+		</div>
+	</div>
+	</div>
+</div>

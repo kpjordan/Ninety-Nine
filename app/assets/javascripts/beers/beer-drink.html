@@ -1,0 +1,22 @@
+<div class="col-sm-3 col-sm-offset-3">
+	<div class="drink-div">
+ 		<h3>12oz. Bottles</h3>
+  		<button id="drink-button" class="btn btn-default" ng-click="drinkBeer(beer.quantity_small)" ng-hide="beer.quantity_small === 0">{{beer.quantity_small}}<br>
+		<p class="tiny-text">Tap to reduce count</p>
+  		</button>
+      <div ng-show="beer.quantity_small === 0">
+        <p>They're all gone!</p>
+      </div>
+   	</div>
+</div>
+  
+<div class="col-sm-3">
+	<div class="drink-div">
+  		<h3>22oz. Bottles</h3>
+  		<button id="drink-button" class="btn btn-default" ng-click="drinkBeer(beer.quantity_large)" ng-hide="beer.quantity_large === 0">{{beer.quantity_large}}<br>
+		<p class="tiny-text">Tap to reduce count</p></button>
+      <div ng-show="beer.quantity_large === 0">
+        <p>They're all gone!</p>
+      </div>
+  	</div>
+</div>
