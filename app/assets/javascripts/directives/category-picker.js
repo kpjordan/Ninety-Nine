@@ -1,3 +1,4 @@
+//directive for category select
 angular.module('ninetyNine')
 .directive('categoryPicker', function(){
 	return {

@@ -1,3 +1,9 @@
+// directive used to give success & failure messages to the user
+// if a Beers function creates a message or error, this directive
+// sees that the length of the appropriate array has changed
+// and passes the message into the appropriate alert, and clears out
+// the array 
+
 angular.module('ninetyNine')
 .directive('nnMessages', function(){
   	return {

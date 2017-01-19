@@ -1,6 +1,10 @@
 angular.module('ninetyNine')
 .controller('MainCtrl', ['$scope', 'beers', 'uiGridConstants', function($scope, beers, uiGridConstants){
 
+	$scope.messages = beers.messages;
+	$scope.errors = beers.errors;
+
+//grid specs
 
 	$scope.gridOptions = {
 		enableSorting: true,
@@ -16,6 +20,9 @@ angular.module('ninetyNine')
 			
 	};
     $scope.gridOptions.enableHorizontalScrollbar = uiGridConstants.scrollbars.NEVER;
+   
+// data and page name toggle. default is in-stock
+
     $scope.buttonText = "Show Out-of-Stock Beers"
     $scope.pageTitle = "In-Stock Beers"
     $scope.toggleData = function(){
@@ -32,7 +39,6 @@ angular.module('ninetyNine')
 		} 
 	};
 
-	$scope.messages = beers.messages;
-	$scope.errors = beers.errors;
+
 	
 }]);

@@ -3,11 +3,13 @@ angular.module('ninetyNine')
 	$scope.beer = beer;
 	$scope.categories = beers.allCategories;
 	$scope.colorOptions = beers.colorOptions;
+
 	$scope.pageTitle = "Edit " + beer.name;
 	$scope.nnColor = beer.color_id;
 	$scope.showDate = new Date(beer.bottle_date);
-	$scope.today = new Date();
 	$scope.$state = $state;
+
+	// category functions should be factored out into directive in future
 	var categoryFinder = function(cat) {
 		 return cat.id === beer.category_id;
 	};
@@ -15,6 +17,9 @@ angular.module('ninetyNine')
 	var idForUpdate = function(thisId){
 		return parseInt(thisId);
 	};
+
+	// update on form submission
+
 	$scope.updateBeer = function(){
 
 		beers.update({

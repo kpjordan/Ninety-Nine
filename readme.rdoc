@@ -1,0 +1,11 @@
+Hello! 99 Bottles is a single-page application I wrote for home use. My husband and I are avid home brewers, and needed a convenient and simple way to manage and track the inventory of beers sitting in our basement. It's designed to be easy to use with mobile devices, so as we're sitting in our living room enjoying a few drinks with friends, we can easily pick up a phone or tablet and update our records.
+
+99 Bottles uses: Rails 4.2/Angular 1.5.8/Ui-Grid/Ui-Router/Bootstrap
+
+I used Bower to manage the front-end.
+
+The database is seeded w/all current officially recognized categories of beer as well as 12 color options.
+
+Future add-ons might include login and user profiles, more admin tools for tracking/statistics, or possibly photos of the beers and “label art” if we decide to be that fancy (we are currently not that fancy).
+
+-K

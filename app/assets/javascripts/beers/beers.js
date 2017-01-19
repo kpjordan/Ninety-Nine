@@ -10,6 +10,8 @@ angular.module('ninetyNine')
 		errors: []
 	};
 	
+	// getting Beers data from database, as well as categories and colors
+
 	o.getAll = function() {
 		return $http.get('/beers.json').then(function successAllBeers(response) {
 			angular.copy(response.data, o.allBeers);
@@ -62,6 +64,9 @@ angular.module('ninetyNine')
 			console.log("Could not get " + id);
 		});
 	};
+
+	// create & edit
+
 	o.create = function(beer) {
 		return $http.post('/beers.json', beer).then(function successCreate(response){
 			o.allBeers.push(response.data);
@@ -87,6 +92,8 @@ angular.module('ninetyNine')
 		});
 		
 	};
+
+	// beers are archived rather than deleted
 
 	function beerFinder(beerArray, thisBeer){
 		for (var i = 0; i < beerArray.length; i++){
@@ -133,6 +140,8 @@ angular.module('ninetyNine')
 		});
 	}; 
 
+	// decrement functions for when you remove a beer from stock
+
 	o.smallDecrement = function(beer) {
 		return $http.put('/beers/' + beer.id + '/drink_small.json').then(function successDecSmall(response){
 			beer.quantity_small -= 1;
@@ -149,5 +158,7 @@ angular.module('ninetyNine')
 			console.log("COuld not decrement large bottle value");
 		});
 	};
+
 	return o;
+	
 }]);

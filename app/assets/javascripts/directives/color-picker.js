@@ -1,3 +1,5 @@
+//directive for color picker. clicking on a colored circle selects
+//it as the color of the beer and highlights the color selection
 angular.module('ninetyNine')
 .directive('colorPicker', function(){
 	return {
